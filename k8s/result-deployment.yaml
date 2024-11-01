@@ -14,6 +14,8 @@ spec:
       labels:
         app: result
     spec:
+      imagePullSecrets:
+      - name: acr-secret  # Add this block
       containers:
       - image: myVotingRegistry.azurecr.io/result
         name: result
