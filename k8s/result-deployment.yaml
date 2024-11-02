@@ -14,8 +14,10 @@ spec:
       labels:
         app: result
     spec:
+      nodeSelector:      # Add this section
+        kubernetes.io/arch: amd64
       imagePullSecrets:
-      - name: acr-secret  # Add this block
+      - name: acr-secret
       containers:
       - image: myVotingRegistry.azurecr.io/myvotingregistry/result
         name: result
