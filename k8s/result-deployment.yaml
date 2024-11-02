@@ -17,7 +17,7 @@ spec:
       imagePullSecrets:
       - name: acr-secret  # Add this block
       containers:
-      - image: myVotingRegistry.azurecr.io/result
+      - image: myVotingRegistry.azurecr.io/myvotingregistry/result
         name: result
         ports:
         - containerPort: 80
