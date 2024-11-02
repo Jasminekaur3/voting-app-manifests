@@ -17,5 +17,5 @@ spec:
       imagePullSecrets:
       - name: acr-secret
       containers:
-      - image: myVotingRegistry.azurecr.io/worker
+      - image: myVotingRegistry.azurecr.io/myvotingregistry/worker
         name: worker
