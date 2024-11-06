@@ -17,7 +17,7 @@ spec:
         kubernetes.io/arch: arm64
       containers:
       - name: worker
-        image: myvotingregistry.azurecr.io/myvotingregistry/worker
+        image: myvotingregistry.azurecr.io/myvotingregistry/worker:v1
         resources:
           requests:
             memory: "64Mi"
