@@ -1,9 +1,8 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  labels:
-    app: worker
   name: worker
+  namespace: voting-app
 spec:
   replicas: 1
   selector:
@@ -15,9 +14,16 @@ spec:
         app: worker
     spec:
       nodeSelector:
-        kubernetes.io/arch: amd64
+        kubernetes.io/arch: arm64
+      containers:
+      - name: worker
+        image: myvotingregistry.azurecr.io/myvotingregistry/worker
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "100m"
+          limits:
+            memory: "128Mi"
+            cpu: "200m"
       imagePullSecrets:
       - name: acr-secret
-      containers:
-      - image: myVotingRegistry.azurecr.io/myvotingregistry/worker
-        name: worker
