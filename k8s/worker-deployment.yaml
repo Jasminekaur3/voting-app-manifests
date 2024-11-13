@@ -14,7 +14,7 @@ spec:
         app: worker
     spec:
       nodeSelector:
-        kubernetes.io/arch: arm64
+        kubernetes.io/arch: amd64
       containers:
       - name: worker
         image: myvotingregistry.azurecr.io/myvotingregistry/worker:v1
